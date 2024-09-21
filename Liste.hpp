@@ -55,14 +55,37 @@ const Liste<T> & Liste<T>::operator =(const Liste<T> & p_liste)
 template<typename T>
 void Liste<T>::ajouter(const T & p_elem, const int & p_cardinalite)
 {
- elem nouveauNoeud = new Noeud(p_elem, p_cardinalite);
+ elem nouveauNoeud = new Noeud(p_elem, nullptr);
  elem elementCourant = m_dernier->m_suivant;
 
- if (p_cardinalite == 0)
+ if (estVide())
  {
-  nouveauNoeud->m_suivant = elementCourant;
-  m_dernier->m_suivant = nouveauNoeud;
+  m_dernier = nouveauNoeud;
+  elementCourant = m_dernier;
+
+ } else {
+
+  if (p_cardinalite == 0)
+  {
+   nouveauNoeud->m_suivant = elementCourant;
+   elementCourant = nouveauNoeud;
+
+  } else if (p_cardinalite >= m_cardinalite)
+    {
+     nouveauNoeud->suivant = elementCourant;
+     elementCourant = nouveauNoeud;
+     nouveauNoeud - m_dernier;
+    } else
+      {
+       for(int i = 0; i < p_cardinalite - 1; i++)
+       {
+        elementCourant = elementCourant->m_suivant;
+       }
+       nouveauNoeud->m_suivant = elementCourant->suivant;
+       elementCourant->suivant = nouveauNoeud;
+      }
  }
+ ++m_cardinalite;
 }
 
 /*template<typename T>
