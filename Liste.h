@@ -73,6 +73,7 @@ private:
 	int m_cardinalite; /*!< Cardinalité de la liste*/
 
 	void detruire();
+	elem pointeurSurNoeud(const int & p_cardinalite) const;
 	//void copier(elem);
 
 	// Méthodes privées

@@ -131,7 +131,7 @@ TEST_F(ListeTest, elementOK)
 	EXPECT_THROW(liste.element(4), PreconditionException);
 }
 
-TEST_F(ListeTest, enlever1elementEleverElOK) 
+TEST_F(ListeTest, enlever1elementEleverElOK)
 {
 	EXPECT_THROW(listeVide.enleverEl(10), std::logic_error);
 
@@ -275,7 +275,7 @@ TEST_F(ListeTest, OperateurAssignationObjetNonVideOK)
 	EXPECT_EQ(liste.element(3), liste2.element(3));
 }
 
-TEST_F(ListeTest, afficherOk) 
+TEST_F(ListeTest, afficherOk)
 {
 	std::cout << liste << std::endl;
 }
